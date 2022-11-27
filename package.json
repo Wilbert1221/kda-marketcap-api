@@ -1,0 +1,18 @@
+{
+  "name": "kda-marketcap",
+  "version": "1.0.0",
+  "description": "An API that leverages Coin Desk to pull news articles related to the Kadena Blockchain",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "author": "web3will",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20",
+    "puppeteer": "^19.3.0"
+  }
+}
