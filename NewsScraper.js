@@ -1,4 +1,6 @@
 const puppeteer = require('puppeteer');
+const fs = require('fs');
+const path = require('path');
 
 const newsScraper = async() => { 
     const news = [];
@@ -37,10 +39,16 @@ const newsScraper = async() => {
     }
 
     browser.close();
-    return JSON.stringify(news, null);
+    console.log(news);
 
+    fs.writeFile(path.join(__dirname, 'articles.json'), JSON.stringify(news, null), (err) => {
+        if(err) throw err;
+        console.log('Write operation complete!');
+    });
+
+    return;
 }
 
 module.exports = { 
     newsScraper
-};
+}
