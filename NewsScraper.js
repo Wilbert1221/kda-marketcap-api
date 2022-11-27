@@ -37,7 +37,7 @@ const newsScraper = async() => {
     }
 
     browser.close();
-    return news;
+    return JSON.stringify(news, null);
 
 }
 
