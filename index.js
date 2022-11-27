@@ -1,4 +1,3 @@
-const { response } = require('express');
 const express = require('express');
 const scraper = require('./NewsScraper');
 
@@ -13,8 +12,13 @@ api.get('/', (req, res) => {
 
 //GET news articles 
 api.get('/articles', async(req, res) => {
-    const news = await scraper.newsScraper(); 
-    res.send(news);
+    try{
+        const news = await scraper.newsScraper(); 
+        res.send(news);
+    }
+    catch(e){
+        console.error(e);
+    }
 })
 
 api.listen(PORT, () => console.log(`Server running on port ${PORT}!`));
